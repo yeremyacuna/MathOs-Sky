@@ -1,0 +1,106 @@
+# =========================
+# Visual Studio
+# =========================
+
+# Configuración local
+.vs/
+
+# Archivos de usuario
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# =========================
+# Compilación
+# =========================
+
+# Directorios de salida
+Debug/
+Release/
+x64/
+x86/
+Win32/
+bin/
+obj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]og/
+[Ll]ogs/
+
+# Archivos generados por el compilador y enlazador
+*.obj
+*.o
+*.lo
+*.idb
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.iobj
+*.ipdb
+*.pch
+*.tlog
+*.lastbuildstate
+*.recipe
+*.log
+
+# Ejecutables y bibliotecas compiladas
+*.exe
+*.dll
+*.app
+*.so
+*.dylib
+
+# =========================
+# IntelliSense y caché
+# =========================
+
+*.ipch
+*.aps
+*.ncb
+*.opendb
+*.VC.db
+*.VC.opendb
+ipch/
+
+# =========================
+# C++ y CMake
+# =========================
+
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+out/
+
+# =========================
+# Paquetes y dependencias
+# =========================
+
+packages/
+.vcpkg/
+.nuget/
+
+# =========================
+# Archivos temporales
+# =========================
+
+*.tmp
+*.temp
+*.bak
+*.cache
+*.orig
+*~
+.DS_Store
+Thumbs.db
+
+# =========================
+# Datos locales generados
+# =========================
+
+Generated Files/
+*.sqlite
+*.sqlite3
+*.db
