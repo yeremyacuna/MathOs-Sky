@@ -33,4 +33,13 @@
       <Filter>Forms</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.gitignore" />
+    <None Include="..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\upc_icon.png">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
