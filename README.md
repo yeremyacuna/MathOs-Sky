@@ -1,6 +1,6 @@
 <div align="center">
   
-<img src="https://raw.githubusercontent.com/yeremyacuna/PlaNet/main/PlaNetProject/upc_icon.png" alt="UPC" width="80" height="100" />
+<img src="MathOs-Sky_Desktop/Resources/upc_icon.png" alt="UPC" width="120" height="118" />
 
 # MathOs-Sky
 
