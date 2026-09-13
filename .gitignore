@@ -4,6 +4,7 @@
 
 # Configuración local
 .vs/
+Desktop.ini
 
 # Archivos de usuario
 *.user

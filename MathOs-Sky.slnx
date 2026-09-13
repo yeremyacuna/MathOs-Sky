@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="MathOs-Sky_Desktop/MathOs-Sky.vcxproj" Id="f70836d1-03cb-62ec-b043-6c614051afb2" />
+</Solution>

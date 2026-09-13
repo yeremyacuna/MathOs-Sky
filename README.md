@@ -68,7 +68,7 @@ La aplicación representa cada departamento como un nodo y cada conexión dispon
     </td>
     <td align="center">
       <b>Katia</b><br>
-      <sub>GitHub pendiente</sub>
+      <sub><a href="https://github.com/">@katia</a></sub>
     </td>
     <td align="center">
       <b>Melissa</b><br>
