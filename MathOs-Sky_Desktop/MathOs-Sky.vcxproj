@@ -131,12 +131,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Forms\MainForm.cpp" />
+    <ClCompile Include="Models\Grafo.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Forms\MainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Models\Grafo.h" />
+    <ClInclude Include="Models\TiposGrafo.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\MainForm.resx">

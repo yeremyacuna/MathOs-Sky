@@ -24,6 +24,9 @@
     <ClCompile Include="Forms\MainForm.cpp">
       <Filter>Forms</Filter>
     </ClCompile>
+    <ClCompile Include="Models\Grafo.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -31,6 +34,12 @@
   <ItemGroup>
     <ClInclude Include="Forms\MainForm.h">
       <Filter>Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\Grafo.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\TiposGrafo.h">
+      <Filter>Models</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

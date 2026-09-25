@@ -83,6 +83,7 @@ out/
 packages/
 .vcpkg/
 .nuget/
+AGENTS.md
 
 # =========================
 # Archivos temporales
