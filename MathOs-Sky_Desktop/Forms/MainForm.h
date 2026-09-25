@@ -54,7 +54,7 @@ namespace MathOsSky {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(484, 392);
+			this->ClientSize = System::Drawing::Size(1519, 652);
 			this->Name = L"MainForm";
 			this->Text = L"MainForm";
 			this->ResumeLayout(false);

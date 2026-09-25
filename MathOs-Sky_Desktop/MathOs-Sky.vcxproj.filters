@@ -21,6 +21,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Algorithms\RutasCanonicas.cpp">
+      <Filter>Algorithms</Filter>
+    </ClCompile>
     <ClCompile Include="Forms\MainForm.cpp">
       <Filter>Forms</Filter>
     </ClCompile>
@@ -32,6 +35,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algorithms\RutasCanonicas.h">
+      <Filter>Algorithms</Filter>
+    </ClInclude>
     <ClInclude Include="Forms\MainForm.h">
       <Filter>Forms</Filter>
     </ClInclude>
@@ -39,6 +45,9 @@
       <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="Models\TiposGrafo.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\TiposTSP.h">
       <Filter>Models</Filter>
     </ClInclude>
   </ItemGroup>

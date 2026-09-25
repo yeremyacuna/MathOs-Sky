@@ -130,16 +130,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Algorithms\RutasCanonicas.cpp" />
     <ClCompile Include="Forms\MainForm.cpp" />
     <ClCompile Include="Models\Grafo.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algorithms\RutasCanonicas.h" />
     <ClInclude Include="Forms\MainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Models\Grafo.h" />
     <ClInclude Include="Models\TiposGrafo.h" />
+    <ClInclude Include="Models\TiposTSP.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\MainForm.resx">
