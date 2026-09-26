@@ -146,7 +146,7 @@ cd MathOs-Sky
 
 ### Consola visual de pruebas
 
-Durante la etapa actual de verificacion, `TestForm` es el formulario activo en `main.cpp`. Para volver temporalmente a la interfaz base, descomenta la linea de `MainForm` y comenta la linea de `TestForm`.
+`MainForm` es el formulario activo en `main.cpp`. Para ejecutar temporalmente la consola visual, comenta la linea de `MainForm` y descomenta la linea adyacente de `TestForm`; al terminar, restaura ambas lineas.
 
 `TestForm` utiliza directamente las APIs de `Models` y `Algorithms`. No sustituye las futuras pruebas automatizadas ni forma parte de la interfaz final.
 

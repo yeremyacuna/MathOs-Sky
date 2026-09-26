@@ -10,7 +10,7 @@ int main(array<String^>^)
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
 
-    // Application::Run(gcnew MathOsSky::MainForm());
+    Application::Run(gcnew MathOsSky::MainForm());
     Application::Run(gcnew MathOsSky::TestForm());
 
     return 0;

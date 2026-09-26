@@ -265,8 +265,7 @@ namespace MathOsSky
             // 
             // panelEncabezado
             // 
-            this->panelEncabezado->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)), static_cast<System::Int32>(static_cast<System::Byte>(43)),
-                static_cast<System::Int32>(static_cast<System::Byte>(78)));
+            this->panelEncabezado->BackColor = System::Drawing::Color::Teal;
             this->panelEncabezado->Controls->Add(this->lblTitulo);
             this->panelEncabezado->Controls->Add(this->lblDescripcion);
             this->panelEncabezado->Controls->Add(this->btnEjecutarTodas);
@@ -307,8 +306,7 @@ namespace MathOsSky
             // btnEjecutarTodas
             // 
             this->btnEjecutarTodas->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-            this->btnEjecutarTodas->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(42)), static_cast<System::Int32>(static_cast<System::Byte>(111)),
-                static_cast<System::Int32>(static_cast<System::Byte>(219)));
+            this->btnEjecutarTodas->BackColor = System::Drawing::Color::LightSeaGreen;
             this->btnEjecutarTodas->FlatAppearance->BorderSize = 0;
             this->btnEjecutarTodas->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btnEjecutarTodas->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10, System::Drawing::FontStyle::Bold));
@@ -324,8 +322,7 @@ namespace MathOsSky
             // btnLimpiar
             // 
             this->btnLimpiar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-            this->btnLimpiar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(56)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
-                static_cast<System::Int32>(static_cast<System::Byte>(106)));
+            this->btnLimpiar->BackColor = System::Drawing::Color::SlateGray;
             this->btnLimpiar->FlatAppearance->BorderSize = 0;
             this->btnLimpiar->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btnLimpiar->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10));
@@ -424,8 +421,7 @@ namespace MathOsSky
             // 
             // btnProbarGrafo
             // 
-            this->btnProbarGrafo->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(42)), static_cast<System::Int32>(static_cast<System::Byte>(111)),
-                static_cast<System::Int32>(static_cast<System::Byte>(219)));
+            this->btnProbarGrafo->BackColor = System::Drawing::Color::CadetBlue;
             this->btnProbarGrafo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btnProbarGrafo->ForeColor = System::Drawing::Color::White;
             this->btnProbarGrafo->Location = System::Drawing::Point(7, 10);
@@ -438,16 +434,17 @@ namespace MathOsSky
             // 
             // btnValidacionesGrafo
             // 
+            this->btnValidacionesGrafo->BackColor = System::Drawing::Color::Silver;
             this->btnValidacionesGrafo->Location = System::Drawing::Point(187, 10);
             this->btnValidacionesGrafo->Name = L"btnValidacionesGrafo";
             this->btnValidacionesGrafo->Size = System::Drawing::Size(190, 36);
             this->btnValidacionesGrafo->TabIndex = 1;
             this->btnValidacionesGrafo->Text = L"Ejecutar validaciones";
+            this->btnValidacionesGrafo->UseVisualStyleBackColor = false;
             this->btnValidacionesGrafo->Click += gcnew System::EventHandler(this, &TestForm::btnValidacionesGrafo_Click);
             // 
             // lblMetricaGrafo
             // 
-            this->lblMetricaGrafo->AutoSize = true;
             this->lblMetricaGrafo->Location = System::Drawing::Point(400, 17);
             this->lblMetricaGrafo->Margin = System::Windows::Forms::Padding(20, 10, 5, 0);
             this->lblMetricaGrafo->Name = L"lblMetricaGrafo";
@@ -461,7 +458,7 @@ namespace MathOsSky
             this->cmbMetricaGrafo->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Distancia", L"Tiempo", L"Costo" });
             this->cmbMetricaGrafo->Location = System::Drawing::Point(466, 10);
             this->cmbMetricaGrafo->Name = L"cmbMetricaGrafo";
-            this->cmbMetricaGrafo->Size = System::Drawing::Size(150, 25);
+            this->cmbMetricaGrafo->Size = System::Drawing::Size(179, 25);
             this->cmbMetricaGrafo->TabIndex = 3;
             // 
             // splitMatrices
@@ -1221,7 +1218,6 @@ namespace MathOsSky
             this->tabGrafo->ResumeLayout(false);
             this->layoutGrafo->ResumeLayout(false);
             this->accionesGrafo->ResumeLayout(false);
-            this->accionesGrafo->PerformLayout();
             this->splitMatrices->Panel1->ResumeLayout(false);
             this->splitMatrices->Panel2->ResumeLayout(false);
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitMatrices))->EndInit();

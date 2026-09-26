@@ -22,8 +22,11 @@
     <Filter Include="Source Files">
       <UniqueIdentifier>{91814d88-56ea-4cd3-8357-42d6964f8daf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Tests\Architecture">
-      <UniqueIdentifier>{e226c9ec-f44f-43ed-a9d3-4fccaae5b18e}</UniqueIdentifier>
+    <Filter Include="Documentation">
+      <UniqueIdentifier>{0fc90438-24ec-4daf-ba71-efde9a486e90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Documentation\Architecture">
+      <UniqueIdentifier>{1e65c222-ee6b-48d5-86db-31ac6f6b2a23}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -87,100 +90,67 @@
     </EmbeddedResource>
     <None Include="..\.gitignore" />
     <None Include="..\README.md" />
-    <EmbeddedResource Include="..\tests\TestForm.resx">
-      <Filter>Tests</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\tests\TestForm.resx">
-      <Filter>Tests</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\tests\TestForm.resx">
-      <Filter>Tests</Filter>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\upc_icon.png">
       <Filter>Resources</Filter>
     </Image>
-    <Image Include="..\docs\arquitectura-actual\diagramas\01_componentes.png">
-      <Filter>Tests\Architecture</Filter>
+    <Image Include="..\docs\architecture\diagrams\01-components.png">
+      <Filter>Documentation\Architecture</Filter>
     </Image>
-    <Image Include="..\docs\arquitectura-actual\diagramas\02_uml_nucleo.png">
-      <Filter>Tests\Architecture</Filter>
+    <Image Include="..\docs\architecture\diagrams\02-core-uml.png">
+      <Filter>Documentation\Architecture</Filter>
     </Image>
-    <Image Include="..\docs\arquitectura-actual\diagramas\03_secuencia_grafo.png">
-      <Filter>Tests\Architecture</Filter>
+    <Image Include="..\docs\architecture\diagrams\03-graph-sequence.png">
+      <Filter>Documentation\Architecture</Filter>
     </Image>
-    <Image Include="..\docs\arquitectura-actual\diagramas\08_secuencia_ejecutar_todas.png">
-      <Filter>Tests\Architecture</Filter>
+    <Image Include="..\docs\architecture\diagrams\08-run-all-tests-sequence.png">
+      <Filter>Documentation\Architecture</Filter>
     </Image>
-    <Image Include="..\docs\arquitectura-actual\diagramas\07_secuencia_traza.png">
-      <Filter>Tests\Architecture</Filter>
+    <Image Include="..\docs\architecture\diagrams\07-route-trace-sequence.png">
+      <Filter>Documentation\Architecture</Filter>
     </Image>
-    <Image Include="..\docs\arquitectura-actual\diagramas\06_secuencia_diagnostico.png">
-      <Filter>Tests\Architecture</Filter>
+    <Image Include="..\docs\architecture\diagrams\06-hamiltonian-diagnostics-sequence.png">
+      <Filter>Documentation\Architecture</Filter>
     </Image>
-    <Image Include="..\docs\arquitectura-actual\diagramas\05_secuencia_solve.png">
-      <Filter>Tests\Architecture</Filter>
+    <Image Include="..\docs\architecture\diagrams\05-tsp-solver-sequence.png">
+      <Filter>Documentation\Architecture</Filter>
     </Image>
-    <Image Include="..\docs\arquitectura-actual\diagramas\04_secuencia_rutas.png">
-      <Filter>Tests\Architecture</Filter>
+    <Image Include="..\docs\architecture\diagrams\04-canonical-routes-sequence.png">
+      <Filter>Documentation\Architecture</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\AGENTS.md" />
-    <None Include="..\docs\arquitectura-actual\diagramas\01_componentes.dot">
-      <Filter>Tests\Architecture</Filter>
+    <None Include="..\docs\architecture\diagrams\01-components.svg">
+      <Filter>Documentation\Architecture</Filter>
     </None>
-    <None Include="..\docs\arquitectura-actual\diagramas\02_uml_nucleo.dot">
-      <Filter>Tests\Architecture</Filter>
+    <None Include="..\docs\architecture\diagrams\02-core-uml.svg">
+      <Filter>Documentation\Architecture</Filter>
     </None>
-    <None Include="..\docs\arquitectura-actual\diagramas\01_componentes.svg">
-      <Filter>Tests\Architecture</Filter>
+    <None Include="..\docs\architecture\diagrams\03-graph-sequence.svg">
+      <Filter>Documentation\Architecture</Filter>
     </None>
-    <None Include="..\docs\arquitectura-actual\diagramas\03_secuencia_grafo.dot">
-      <Filter>Tests\Architecture</Filter>
+    <None Include="..\docs\architecture\diagrams\08-run-all-tests-sequence.svg">
+      <Filter>Documentation\Architecture</Filter>
     </None>
-    <None Include="..\docs\arquitectura-actual\diagramas\02_uml_nucleo.svg">
-      <Filter>Tests\Architecture</Filter>
+    <None Include="..\docs\architecture\diagrams\07-route-trace-sequence.svg">
+      <Filter>Documentation\Architecture</Filter>
     </None>
-    <None Include="..\docs\arquitectura-actual\diagramas\03_secuencia_grafo.svg">
-      <Filter>Tests\Architecture</Filter>
+    <None Include="..\docs\architecture\diagrams\06-hamiltonian-diagnostics-sequence.svg">
+      <Filter>Documentation\Architecture</Filter>
     </None>
-    <None Include="..\docs\arquitectura-actual\diagramas\08_secuencia_ejecutar_todas.svg">
-      <Filter>Tests\Architecture</Filter>
+    <None Include="..\docs\architecture\diagrams\04-canonical-routes-sequence.svg">
+      <Filter>Documentation\Architecture</Filter>
     </None>
-    <None Include="..\docs\arquitectura-actual\diagramas\08_secuencia_ejecutar_todas.dot">
-      <Filter>Tests\Architecture</Filter>
+    <None Include="..\docs\architecture\diagrams\05-tsp-solver-sequence.svg">
+      <Filter>Documentation\Architecture</Filter>
     </None>
-    <None Include="..\docs\arquitectura-actual\diagramas\07_secuencia_traza.svg">
-      <Filter>Tests\Architecture</Filter>
+    <None Include="..\docs\architecture\MathOs-Sky-Architecture.md">
+      <Filter>Documentation\Architecture</Filter>
     </None>
-    <None Include="..\docs\arquitectura-actual\diagramas\06_secuencia_diagnostico.svg">
-      <Filter>Tests\Architecture</Filter>
-    </None>
-    <None Include="..\docs\arquitectura-actual\diagramas\06_secuencia_diagnostico.dot">
-      <Filter>Tests\Architecture</Filter>
-    </None>
-    <None Include="..\docs\arquitectura-actual\diagramas\07_secuencia_traza.dot">
-      <Filter>Tests\Architecture</Filter>
-    </None>
-    <None Include="..\docs\arquitectura-actual\diagramas\05_secuencia_solve.dot">
-      <Filter>Tests\Architecture</Filter>
-    </None>
-    <None Include="..\docs\arquitectura-actual\diagramas\04_secuencia_rutas.dot">
-      <Filter>Tests\Architecture</Filter>
-    </None>
-    <None Include="..\docs\arquitectura-actual\diagramas\04_secuencia_rutas.svg">
-      <Filter>Tests\Architecture</Filter>
-    </None>
-    <None Include="..\docs\arquitectura-actual\diagramas\05_secuencia_solve.svg">
-      <Filter>Tests\Architecture</Filter>
-    </None>
-    <None Include="..\docs\arquitectura-actual\Arquitectura_26-09-2026_MathOs_Sky.md">
-      <Filter>Tests\Architecture</Filter>
-    </None>
-    <None Include="..\docs\arquitectura-actual\Arquitectura_26-09-2026_MathOs_Sky.pdf">
-      <Filter>Tests\Architecture</Filter>
+    <None Include="..\docs\architecture\MathOs-Sky-Architecture.pdf">
+      <Filter>Documentation\Architecture</Filter>
     </None>
   </ItemGroup>
 </Project>

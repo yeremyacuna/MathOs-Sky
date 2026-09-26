@@ -106,3 +106,6 @@ Generated Files/
 *.sqlite
 *.sqlite3
 *.db
+
+# Herramientas locales de documentacion
+docs/architecture/tools/

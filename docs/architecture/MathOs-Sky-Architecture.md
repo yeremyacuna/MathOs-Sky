@@ -3,8 +3,10 @@
 ## Arquitectura actual del núcleo matemático
 
 **Proyecto de Matemática Computacional**  
-**Estado auditado:** commit `f40cf0ab4fff9af42328d7255bbc292a1b2f0f33`  
+**Estado auditado:** commit `0a8cf9408d1413126fc6595a15a0bdcb5ab09abe`  
 **Fecha de generación:** 26 de septiembre de 2026
+
+> Este Markdown es la fuente viva y puede actualizarse con el proyecto. El PDF versionado es una instantanea historica congelada y no debe sobrescribirse durante esta etapa.
 
 ---
 
@@ -70,8 +72,8 @@ El repositorio oficial no contiene todavía un catálogo ni una clase `Departame
 - `Ejecutar todas` dependía parcialmente del estado previo de la interfaz. Ahora fija explícitamente métricas y escenarios iniciales.
 - Los manejadores borraban sus resultados antes de cada escenario, por lo que la batería completa solo dejaba visible el último. Durante la ejecución global ahora se conservan todos los registros y se agregan encabezados por escenario.
 - La batería global solo comprobaba cinco nodos en rutas canónicas. Ahora ejecuta de 5 a 10 nodos.
-- README afirmaba que `MainForm` era el formulario activo, pero el commit auditado ejecuta `TestForm`. README fue alineado con el comportamiento real.
-- El proyecto incluía `AGENTS.md`, aunque el archivo está ignorado y no está versionado. Se eliminó únicamente esa referencia no reproducible del `.vcxproj`.
+- `MainForm` permanece como formulario de inicio y `TestForm` se conserva como alternativa comentada para verificaciones internas.
+- La referencia a `AGENTS.md` se conserva intencionalmente en el proyecto. Es un archivo local ignorado por Git y su ausencia en otros equipos no afecta la compilacion porque esta registrado como `None`.
 
 ### 2.2 Observaciones descartadas
 
@@ -148,45 +150,45 @@ Los algoritmos reciben `const Grafo&`. Esto evita copiar toda la matriz y garant
 
 ## 5. Arquitectura y dependencias
 
-![Diagrama de componentes](diagramas/01_componentes.svg)
+![Diagrama de componentes](diagrams/01-components.svg)
 
 La dirección real del código implementado es `TestForm -> Algorithms -> Models`. `TestForm` también usa `Grafo` directamente para preparar datos de prueba. Services se muestra como pendiente y no participa todavía en la ejecución.
 
 ### 5.1 UML de clases y estructuras
 
-![UML del núcleo](diagramas/02_uml_nucleo.svg)
+![UML del núcleo](diagrams/02-core-uml.svg)
 
 ## 6. Diagramas de secuencia
 
 ### 6.1 Construcción y consulta de un Grafo
 
-![Secuencia de Grafo](diagramas/03_secuencia_grafo.svg)
+![Secuencia de Grafo](diagrams/03-graph-sequence.svg)
 
 ### 6.2 Generación de rutas canónicas
 
-![Secuencia de rutas](diagramas/04_secuencia_rutas.svg)
+![Secuencia de rutas](diagrams/04-canonical-routes-sequence.svg)
 
 ### 6.3 SolucionadorTSP::solve
 
-![Secuencia de solve](diagramas/05_secuencia_solve.svg)
+![Secuencia de solve](diagrams/05-tsp-solver-sequence.svg)
 
 ### 6.4 DiagnosticoHamiltoniano::analyze
 
-![Secuencia de diagnóstico](diagramas/06_secuencia_diagnostico.svg)
+![Secuencia de diagnóstico](diagrams/06-hamiltonian-diagnostics-sequence.svg)
 
 ### 6.5 SolucionadorTSP::traceRuta
 
-![Secuencia de traza](diagramas/07_secuencia_traza.svg)
+![Secuencia de traza](diagrams/07-route-trace-sequence.svg)
 
 ### 6.6 Botón Ejecutar todas
 
-![Secuencia de pruebas](diagramas/08_secuencia_ejecutar_todas.svg)
+![Secuencia de pruebas](diagrams/08-run-all-tests-sequence.svg)
 
 ## 7. Flujo funcional actual
 
-En el commit auditado, `main.cpp` ejecuta `TestForm`. El flujo real es:
+En el commit auditado, `main.cpp` ejecuta `MainForm`. Para las verificaciones internas, el desarrollador puede activar temporalmente la linea adyacente de `TestForm`. El flujo de prueba es:
 
-1. `main.cpp` configura Windows Forms y abre `TestForm`.
+1. `main.cpp` configura Windows Forms y abre `MainForm` de manera predeterminada.
 2. El constructor llama a `InitializeComponent` y selecciona el índice cero de cada `ComboBox`.
 3. El usuario elige una pestaña o presiona `Ejecutar todas`.
 4. `TestForm.cpp` crea un `Grafo` local con datos deterministas.
