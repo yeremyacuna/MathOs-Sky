@@ -131,12 +131,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Algorithms\RutasCanonicas.cpp" />
+    <ClCompile Include="Algorithms\SolucionadorTSP.cpp" />
     <ClCompile Include="Forms\MainForm.cpp" />
     <ClCompile Include="Models\Grafo.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algorithms\RutasCanonicas.h" />
+    <ClInclude Include="Algorithms\SolucionadorTSP.h" />
     <ClInclude Include="Forms\MainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

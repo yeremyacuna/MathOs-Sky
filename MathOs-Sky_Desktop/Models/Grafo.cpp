@@ -1,5 +1,4 @@
 #include "Grafo.h"
-
 #include <cmath>
 #include <stdexcept>
 
@@ -69,7 +68,7 @@ namespace MathOsSky
     void Grafo::removeConexion(int origen, int destino)
     {
         validateNodos(origen, destino);
-        // Elimina ambos sentidos para conservar la simetria del grafo
+        // Elimina ambos sentidos para conservar la simetria del grafo -> Conexion{} crea una conexion con valor default
         conexiones[origen][destino] = Conexion{};
         conexiones[destino][origen] = Conexion{};
     }
@@ -79,13 +78,6 @@ namespace MathOsSky
     {
         validateNodos(origen, destino);
         return conexiones[origen][destino].existe;
-    }
-
-    // Devuelve todos los datos almacenados en una conexion
-    Conexion Grafo::getConexion(int origen, int destino) const
-    {
-        validateNodos(origen, destino);
-        return conexiones[origen][destino];
     }
 
     // Selecciona el peso correspondiente a la metrica indicada
@@ -103,6 +95,13 @@ namespace MathOsSky
         default:
             throw std::invalid_argument("Metrica no reconocida.");
         }
+    }
+
+    // Devuelve todos los datos almacenados en una conexion
+    Conexion Grafo::getConexion(int origen, int destino) const
+    {
+        validateNodos(origen, destino);
+        return conexiones[origen][destino];
     }
 
     // Devuelve el peso de una conexion segun la metrica indicada

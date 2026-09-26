@@ -1,12 +1,11 @@
 #pragma once
-
 #include <cstddef>
 #include <limits>
 #include <vector>
 
 namespace MathOsSky
 {
-    // struct agrupa una ruta candidata junto con su validez y valor total
+    // struct agrupa una ruta candidata junto con su validez y valor total; representa el resultado de evaluar una sola ruta.
     struct RutaEvaluada
     {
         std::vector<int> ruta;
@@ -14,7 +13,7 @@ namespace MathOsSky
         double valorTotal = 0.0;
     };
 
-    // struct agrupa las rutas evaluadas y el mejor resultado del solucionador TSP
+    // struct agrupa las rutas evaluadas y el mejor resultado del solucionador TSP, mientras RutaEvaluada representa una sola ruta, ResultadoTSP representa todo el proceso.
     struct ResultadoTSP
     {
         std::vector<RutaEvaluada> rutas;
