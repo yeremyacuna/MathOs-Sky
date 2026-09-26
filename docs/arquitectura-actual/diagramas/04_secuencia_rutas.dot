@@ -1,0 +1,14 @@
+digraph SecuenciaRutas {
+  graph [rankdir=TB, bgcolor="transparent", fontname="Segoe UI", pad=0.2, ranksep=0.45];
+  node [shape=box, style="rounded,filled", fontname="Segoe UI", fontsize=10, color="#315A88", fillcolor="#F7FAFD"];
+  edge [fontname="Segoe UI", fontsize=9, color="#52677D"];
+  caller [label="Llamador"];
+  validar [label="1. Validar n y origen"];
+  base [label="2. Fijar origen\ny ordenar nodos restantes"];
+  cerrar [label="3. Agregar origen al final"];
+  permutar [label="4. next_permutation\nsobre nodos interiores"];
+  canon [label="5. Conservar si primero < ultimo\nelimina el ciclo inverso"];
+  resultado [label="6. Rutas cerradas deterministas\n(n-1)! / 2"];
+  caller -> validar -> base -> cerrar -> permutar -> canon -> resultado;
+  resultado -> caller [style=dashed, label="vector de rutas"];
+}

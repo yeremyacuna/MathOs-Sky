@@ -1,0 +1,16 @@
+digraph SecuenciaTodas {
+  graph [rankdir=TB, bgcolor="transparent", fontname="Segoe UI", pad=0.2, ranksep=0.45];
+  node [shape=box, style="rounded,filled", fontname="Segoe UI", fontsize=10, color="#315A88", fillcolor="#F7FAFD"];
+  edge [fontname="Segoe UI", fontsize=9, color="#52677D"];
+  user [label="Usuario"];
+  button [label="1. Ejecutar todas"];
+  reset [label="2. Limpiar contadores\ny fijar selecciones"];
+  graphTests [label="3. Grafo\noperaciones + validaciones"];
+  routes [label="4. Rutas canonicas\n5, 6, 7, 8, 9 y 10 nodos"];
+  tsp [label="5. Cinco escenarios TSP"];
+  diag [label="6. Cuatro diagnosticos"];
+  trace [label="7. Seis trazas"];
+  summary [label="8. Resumen PASS / FAIL\nregistros conservados"];
+  user -> button -> reset -> graphTests -> routes -> tsp -> diag -> trace -> summary;
+  summary -> user [style=dashed, label="112 aprobadas, 0 fallidas en la auditoria"];
+}

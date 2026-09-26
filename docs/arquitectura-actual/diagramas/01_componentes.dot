@@ -1,0 +1,42 @@
+digraph Componentes {
+  graph [rankdir=TB, bgcolor="transparent", fontname="Segoe UI", pad=0.25, nodesep=0.45, ranksep=0.65];
+  node [shape=box, style="rounded,filled", fontname="Segoe UI", fontsize=11, color="#315A88", fillcolor="#EAF2FB", margin="0.15,0.10"];
+  edge [fontname="Segoe UI", fontsize=9, color="#52677D", arrowsize=0.8];
+
+  main [label="main.cpp\nPunto de entrada", fillcolor="#DCEBFA"];
+  test [label="TestForm\nConsola visual interna", fillcolor="#E8F5E9", color="#2E7D32"];
+  mainform [label="MainForm\nInterfaz base pendiente de integrar", fillcolor="#F5F5F5", color="#777777"];
+  services [label="Services\nPendiente", style="rounded,dashed,filled", fillcolor="#FFF8E1", color="#B28704"];
+
+  subgraph cluster_algorithms {
+    label="Algorithms"; color="#8AAED3"; style="rounded"; fontname="Segoe UI";
+    rutas [label="RutasCanonicas"];
+    solver [label="SolucionadorTSP"];
+    diag [label="DiagnosticoHamiltoniano"];
+  }
+
+  subgraph cluster_models {
+    label="Models"; color="#8AAED3"; style="rounded"; fontname="Segoe UI";
+    grafo [label="Grafo + Conexion + Metrica"];
+    tsp [label="RutaEvaluada + ResultadoTSP"];
+    pasos [label="PasoConexionTSP + TrazaRutaTSP"];
+    diagnostico [label="ConexionFaltante + ResultadoDiagnostico"];
+  }
+
+  main -> test [label="activo en el commit auditado"];
+  main -> mainform [style=dashed, label="alternativa comentada"];
+  test -> grafo [label="construye escenarios locales"];
+  test -> rutas;
+  test -> solver;
+  test -> diag;
+  solver -> rutas;
+  solver -> grafo;
+  solver -> tsp;
+  solver -> pasos;
+  diag -> rutas;
+  diag -> grafo;
+  diag -> diagnostico;
+  mainform -> services [style=dashed, label="integracion futura"];
+  services -> solver [style=dashed];
+  services -> grafo [style=dashed];
+}

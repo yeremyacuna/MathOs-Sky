@@ -1,0 +1,14 @@
+digraph SecuenciaTraza {
+  graph [rankdir=TB, bgcolor="transparent", fontname="Segoe UI", pad=0.2, ranksep=0.45];
+  node [shape=box, style="rounded,filled", fontname="Segoe UI", fontsize=10, color="#315A88", fillcolor="#F7FAFD"];
+  edge [fontname="Segoe UI", fontsize=9, color="#52677D"];
+  form [label="TestForm"];
+  trace [label="1. SolucionadorTSP::traceRuta"];
+  validate [label="2. Validar metrica y estructura"];
+  evaluate [label="3. evaluateRuta\ncon vector de pasos"];
+  step [label="4. Registrar PasoConexionTSP\npeso y acumulado"];
+  stop [label="5. Detener en primera ausencia\no completar el retorno"];
+  result [label="6. TrazaRutaTSP"];
+  form -> trace -> validate -> evaluate -> step -> stop -> result;
+  result -> form [style=dashed, label="solo una ruta bajo demanda"];
+}

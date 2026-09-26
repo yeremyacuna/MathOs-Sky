@@ -14,6 +14,7 @@ namespace MathOsSky
         TestForm(void)
         {
             InitializeComponent();
+            inicializarSelecciones();
         }
 
     protected:
@@ -110,7 +111,9 @@ namespace MathOsSky
     private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn13;
     private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn14;
            int cantidadFallidas = 0;
+        bool ejecutandoTodas = false;
 
+        void inicializarSelecciones();
         void registrarResultado(System::Windows::Forms::RichTextBox^ area, bool aprobado, System::String^ mensaje);
         void registrarExcepcion(System::Windows::Forms::RichTextBox^ area, System::String^ contexto, const std::exception& error);
         void actualizarContadores();
@@ -158,9 +161,9 @@ namespace MathOsSky
             this->btnGenerarRutas = (gcnew System::Windows::Forms::Button());
             this->lblConteoRutas = (gcnew System::Windows::Forms::Label());
             this->dgvRutas = (gcnew System::Windows::Forms::DataGridView());
-            this->txtResultadoRutas = (gcnew System::Windows::Forms::RichTextBox());
             this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+            this->txtResultadoRutas = (gcnew System::Windows::Forms::RichTextBox());
             this->tabSolucionador = (gcnew System::Windows::Forms::TabPage());
             this->layoutSolucionador = (gcnew System::Windows::Forms::TableLayoutPanel());
             this->accionesSolucionador = (gcnew System::Windows::Forms::FlowLayoutPanel());
@@ -174,11 +177,11 @@ namespace MathOsSky
             this->lblMejorRutaTSP = (gcnew System::Windows::Forms::Label());
             this->lblMejorValorTSP = (gcnew System::Windows::Forms::Label());
             this->dgvTSP = (gcnew System::Windows::Forms::DataGridView());
-            this->txtResultadoTSP = (gcnew System::Windows::Forms::RichTextBox());
             this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->dataGridViewTextBoxColumn4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->dataGridViewTextBoxColumn5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->dataGridViewTextBoxColumn6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+            this->txtResultadoTSP = (gcnew System::Windows::Forms::RichTextBox());
             this->tabDiagnostico = (gcnew System::Windows::Forms::TabPage());
             this->layoutDiagnostico = (gcnew System::Windows::Forms::TableLayoutPanel());
             this->accionesDiagnostico = (gcnew System::Windows::Forms::FlowLayoutPanel());
@@ -189,9 +192,9 @@ namespace MathOsSky
             this->lblRutaSugerida = (gcnew System::Windows::Forms::Label());
             this->lblCantidadFaltantes = (gcnew System::Windows::Forms::Label());
             this->dgvFaltantes = (gcnew System::Windows::Forms::DataGridView());
-            this->txtResultadoDiagnostico = (gcnew System::Windows::Forms::RichTextBox());
             this->dataGridViewTextBoxColumn7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->dataGridViewTextBoxColumn8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+            this->txtResultadoDiagnostico = (gcnew System::Windows::Forms::RichTextBox());
             this->tabTraza = (gcnew System::Windows::Forms::TabPage());
             this->layoutTraza = (gcnew System::Windows::Forms::TableLayoutPanel());
             this->accionesTraza = (gcnew System::Windows::Forms::FlowLayoutPanel());
@@ -202,13 +205,13 @@ namespace MathOsSky
             this->lblValidezTraza = (gcnew System::Windows::Forms::Label());
             this->lblValorTraza = (gcnew System::Windows::Forms::Label());
             this->dgvTraza = (gcnew System::Windows::Forms::DataGridView());
-            this->txtResultadoTraza = (gcnew System::Windows::Forms::RichTextBox());
             this->dataGridViewTextBoxColumn9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->dataGridViewTextBoxColumn10 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->dataGridViewTextBoxColumn11 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->dataGridViewTextBoxColumn12 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->dataGridViewTextBoxColumn13 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->dataGridViewTextBoxColumn14 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+            this->txtResultadoTraza = (gcnew System::Windows::Forms::RichTextBox());
             this->layoutPrincipal->SuspendLayout();
             this->panelEncabezado->SuspendLayout();
             this->tabsPruebas->SuspendLayout();
@@ -284,9 +287,10 @@ namespace MathOsSky
             this->lblTitulo->ForeColor = System::Drawing::Color::White;
             this->lblTitulo->Location = System::Drawing::Point(28, 18);
             this->lblTitulo->Name = L"lblTitulo";
-            this->lblTitulo->Size = System::Drawing::Size(600, 37);
+            this->lblTitulo->Size = System::Drawing::Size(549, 37);
             this->lblTitulo->TabIndex = 0;
             this->lblTitulo->Text = L"MathOs-Sky - Core & Algorithms Test Form";
+            this->lblTitulo->Click += gcnew System::EventHandler(this, &TestForm::lblTitulo_Click);
             // 
             // lblDescripcion
             // 
@@ -640,17 +644,6 @@ namespace MathOsSky
             this->dgvRutas->Size = System::Drawing::Size(1306, 360);
             this->dgvRutas->TabIndex = 1;
             // 
-            // txtResultadoRutas
-            // 
-            this->txtResultadoRutas->BackColor = System::Drawing::Color::White;
-            this->txtResultadoRutas->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->txtResultadoRutas->Location = System::Drawing::Point(3, 423);
-            this->txtResultadoRutas->Name = L"txtResultadoRutas";
-            this->txtResultadoRutas->ReadOnly = true;
-            this->txtResultadoRutas->Size = System::Drawing::Size(1306, 129);
-            this->txtResultadoRutas->TabIndex = 2;
-            this->txtResultadoRutas->Text = L"";
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this->dataGridViewTextBoxColumn1->HeaderText = L"#";
@@ -662,6 +655,17 @@ namespace MathOsSky
             this->dataGridViewTextBoxColumn2->HeaderText = L"Ruta canonica";
             this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
             this->dataGridViewTextBoxColumn2->ReadOnly = true;
+            // 
+            // txtResultadoRutas
+            // 
+            this->txtResultadoRutas->BackColor = System::Drawing::Color::White;
+            this->txtResultadoRutas->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->txtResultadoRutas->Location = System::Drawing::Point(3, 423);
+            this->txtResultadoRutas->Name = L"txtResultadoRutas";
+            this->txtResultadoRutas->ReadOnly = true;
+            this->txtResultadoRutas->Size = System::Drawing::Size(1306, 129);
+            this->txtResultadoRutas->TabIndex = 2;
+            this->txtResultadoRutas->Text = L"";
             // 
             // tabSolucionador
             // 
@@ -777,7 +781,7 @@ namespace MathOsSky
             this->resumenSolucionador->Name = L"resumenSolucionador";
             this->resumenSolucionador->Padding = System::Windows::Forms::Padding(8);
             this->resumenSolucionador->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute,
-                20)));
+                50)));
             this->resumenSolucionador->Size = System::Drawing::Size(1306, 66);
             this->resumenSolucionador->TabIndex = 1;
             // 
@@ -834,17 +838,6 @@ namespace MathOsSky
             this->dgvTSP->Size = System::Drawing::Size(1306, 308);
             this->dgvTSP->TabIndex = 2;
             // 
-            // txtResultadoTSP
-            // 
-            this->txtResultadoTSP->BackColor = System::Drawing::Color::White;
-            this->txtResultadoTSP->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->txtResultadoTSP->Location = System::Drawing::Point(3, 443);
-            this->txtResultadoTSP->Name = L"txtResultadoTSP";
-            this->txtResultadoTSP->ReadOnly = true;
-            this->txtResultadoTSP->Size = System::Drawing::Size(1306, 109);
-            this->txtResultadoTSP->TabIndex = 3;
-            this->txtResultadoTSP->Text = L"";
-            // 
             // dataGridViewTextBoxColumn3
             // 
             this->dataGridViewTextBoxColumn3->HeaderText = L"#";
@@ -868,6 +861,17 @@ namespace MathOsSky
             this->dataGridViewTextBoxColumn6->HeaderText = L"Valor total";
             this->dataGridViewTextBoxColumn6->Name = L"dataGridViewTextBoxColumn6";
             this->dataGridViewTextBoxColumn6->ReadOnly = true;
+            // 
+            // txtResultadoTSP
+            // 
+            this->txtResultadoTSP->BackColor = System::Drawing::Color::White;
+            this->txtResultadoTSP->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->txtResultadoTSP->Location = System::Drawing::Point(3, 443);
+            this->txtResultadoTSP->Name = L"txtResultadoTSP";
+            this->txtResultadoTSP->ReadOnly = true;
+            this->txtResultadoTSP->Size = System::Drawing::Size(1306, 109);
+            this->txtResultadoTSP->TabIndex = 3;
+            this->txtResultadoTSP->Text = L"";
             // 
             // tabDiagnostico
             // 
@@ -997,17 +1001,6 @@ namespace MathOsSky
             this->dgvFaltantes->Size = System::Drawing::Size(1306, 274);
             this->dgvFaltantes->TabIndex = 4;
             // 
-            // txtResultadoDiagnostico
-            // 
-            this->txtResultadoDiagnostico->BackColor = System::Drawing::Color::White;
-            this->txtResultadoDiagnostico->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->txtResultadoDiagnostico->Location = System::Drawing::Point(3, 433);
-            this->txtResultadoDiagnostico->Name = L"txtResultadoDiagnostico";
-            this->txtResultadoDiagnostico->ReadOnly = true;
-            this->txtResultadoDiagnostico->Size = System::Drawing::Size(1306, 119);
-            this->txtResultadoDiagnostico->TabIndex = 5;
-            this->txtResultadoDiagnostico->Text = L"";
-            // 
             // dataGridViewTextBoxColumn7
             // 
             this->dataGridViewTextBoxColumn7->HeaderText = L"Origen";
@@ -1019,6 +1012,17 @@ namespace MathOsSky
             this->dataGridViewTextBoxColumn8->HeaderText = L"Destino";
             this->dataGridViewTextBoxColumn8->Name = L"dataGridViewTextBoxColumn8";
             this->dataGridViewTextBoxColumn8->ReadOnly = true;
+            // 
+            // txtResultadoDiagnostico
+            // 
+            this->txtResultadoDiagnostico->BackColor = System::Drawing::Color::White;
+            this->txtResultadoDiagnostico->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->txtResultadoDiagnostico->Location = System::Drawing::Point(3, 433);
+            this->txtResultadoDiagnostico->Name = L"txtResultadoDiagnostico";
+            this->txtResultadoDiagnostico->ReadOnly = true;
+            this->txtResultadoDiagnostico->Size = System::Drawing::Size(1306, 119);
+            this->txtResultadoDiagnostico->TabIndex = 5;
+            this->txtResultadoDiagnostico->Text = L"";
             // 
             // tabTraza
             // 
@@ -1149,17 +1153,6 @@ namespace MathOsSky
             this->dgvTraza->Size = System::Drawing::Size(1306, 279);
             this->dgvTraza->TabIndex = 4;
             // 
-            // txtResultadoTraza
-            // 
-            this->txtResultadoTraza->BackColor = System::Drawing::Color::White;
-            this->txtResultadoTraza->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->txtResultadoTraza->Location = System::Drawing::Point(3, 438);
-            this->txtResultadoTraza->Name = L"txtResultadoTraza";
-            this->txtResultadoTraza->ReadOnly = true;
-            this->txtResultadoTraza->Size = System::Drawing::Size(1306, 114);
-            this->txtResultadoTraza->TabIndex = 5;
-            this->txtResultadoTraza->Text = L"";
-            // 
             // dataGridViewTextBoxColumn9
             // 
             this->dataGridViewTextBoxColumn9->HeaderText = L"Paso";
@@ -1195,6 +1188,17 @@ namespace MathOsSky
             this->dataGridViewTextBoxColumn14->HeaderText = L"Acumulado";
             this->dataGridViewTextBoxColumn14->Name = L"dataGridViewTextBoxColumn14";
             this->dataGridViewTextBoxColumn14->ReadOnly = true;
+            // 
+            // txtResultadoTraza
+            // 
+            this->txtResultadoTraza->BackColor = System::Drawing::Color::White;
+            this->txtResultadoTraza->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->txtResultadoTraza->Location = System::Drawing::Point(3, 438);
+            this->txtResultadoTraza->Name = L"txtResultadoTraza";
+            this->txtResultadoTraza->ReadOnly = true;
+            this->txtResultadoTraza->Size = System::Drawing::Size(1306, 114);
+            this->txtResultadoTraza->TabIndex = 5;
+            this->txtResultadoTraza->Text = L"";
             // 
             // TestForm
             // 
@@ -1251,6 +1255,8 @@ namespace MathOsSky
         }
 #pragma endregion
     private: System::Void TestForm_Load(System::Object^ sender, System::EventArgs^ e) {
+    }
+    private: System::Void lblTitulo_Click(System::Object^ sender, System::EventArgs^ e) {
     }
 };
 }

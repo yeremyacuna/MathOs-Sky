@@ -165,9 +165,35 @@
   <ItemGroup>
     <None Include="..\.gitignore" />
     <None Include="..\AGENTS.md" />
+    <None Include="..\docs\arquitectura-actual\Arquitectura_26-09-2026_MathOs_Sky.md" />
+    <None Include="..\docs\arquitectura-actual\Arquitectura_26-09-2026_MathOs_Sky.pdf" />
+    <None Include="..\docs\arquitectura-actual\diagramas\01_componentes.dot" />
+    <None Include="..\docs\arquitectura-actual\diagramas\01_componentes.svg" />
+    <None Include="..\docs\arquitectura-actual\diagramas\02_uml_nucleo.dot" />
+    <None Include="..\docs\arquitectura-actual\diagramas\02_uml_nucleo.svg" />
+    <None Include="..\docs\arquitectura-actual\diagramas\03_secuencia_grafo.dot" />
+    <None Include="..\docs\arquitectura-actual\diagramas\03_secuencia_grafo.svg" />
+    <None Include="..\docs\arquitectura-actual\diagramas\04_secuencia_rutas.dot" />
+    <None Include="..\docs\arquitectura-actual\diagramas\04_secuencia_rutas.svg" />
+    <None Include="..\docs\arquitectura-actual\diagramas\05_secuencia_solve.dot" />
+    <None Include="..\docs\arquitectura-actual\diagramas\05_secuencia_solve.svg" />
+    <None Include="..\docs\arquitectura-actual\diagramas\06_secuencia_diagnostico.dot" />
+    <None Include="..\docs\arquitectura-actual\diagramas\06_secuencia_diagnostico.svg" />
+    <None Include="..\docs\arquitectura-actual\diagramas\07_secuencia_traza.dot" />
+    <None Include="..\docs\arquitectura-actual\diagramas\07_secuencia_traza.svg" />
+    <None Include="..\docs\arquitectura-actual\diagramas\08_secuencia_ejecutar_todas.dot" />
+    <None Include="..\docs\arquitectura-actual\diagramas\08_secuencia_ejecutar_todas.svg" />
     <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\docs\arquitectura-actual\diagramas\01_componentes.png" />
+    <Image Include="..\docs\arquitectura-actual\diagramas\02_uml_nucleo.png" />
+    <Image Include="..\docs\arquitectura-actual\diagramas\03_secuencia_grafo.png" />
+    <Image Include="..\docs\arquitectura-actual\diagramas\04_secuencia_rutas.png" />
+    <Image Include="..\docs\arquitectura-actual\diagramas\05_secuencia_solve.png" />
+    <Image Include="..\docs\arquitectura-actual\diagramas\06_secuencia_diagnostico.png" />
+    <Image Include="..\docs\arquitectura-actual\diagramas\07_secuencia_traza.png" />
+    <Image Include="..\docs\arquitectura-actual\diagramas\08_secuencia_ejecutar_todas.png" />
     <Image Include="Resources\upc_icon.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

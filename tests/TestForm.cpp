@@ -1,10 +1,8 @@
 #include "TestForm.h"
-
 #include "../MathOs-Sky_Desktop/Algorithms/DiagnosticoHamiltoniano.h"
 #include "../MathOs-Sky_Desktop/Algorithms/RutasCanonicas.h"
 #include "../MathOs-Sky_Desktop/Algorithms/SolucionadorTSP.h"
 #include "../MathOs-Sky_Desktop/Models/Grafo.h"
-
 #include <algorithm>
 #include <cmath>
 #include <cstddef>
@@ -208,6 +206,16 @@ namespace
 
 namespace MathOsSky
 {
+    void TestForm::inicializarSelecciones()
+    {
+        cmbMetricaGrafo->SelectedIndex = 0;
+        cmbEscenarioTSP->SelectedIndex = 0;
+        cmbMetricaTSP->SelectedIndex = 0;
+        cmbEscenarioDiagnostico->SelectedIndex = 0;
+        cmbEscenarioTraza->SelectedIndex = 0;
+        cmbMetricaTraza->SelectedIndex = 0;
+    }
+
     void TestForm::actualizarContadores()
     {
         lblAprobadas->Text = String::Format(L"Aprobadas: {0}", cantidadAprobadas);
@@ -263,7 +271,10 @@ namespace MathOsSky
     {
         try
         {
-            txtResultadoGrafo->Clear();
+            if (!ejecutandoTodas)
+            {
+                txtResultadoGrafo->Clear();
+            }
             Grafo grafo = crearGrafoCompleto();
             grafo.addConexion(0, 1, 7.0, 8.0, 9.0);
 
@@ -308,7 +319,10 @@ namespace MathOsSky
 
     System::Void TestForm::btnValidacionesGrafo_Click(System::Object^, System::EventArgs^)
     {
-        txtResultadoGrafo->Clear();
+        if (!ejecutandoTodas)
+        {
+            txtResultadoGrafo->Clear();
+        }
         registrarResultado(txtResultadoGrafo, rechazaCantidadNodos(4), L"Se rechazo un grafo de cuatro nodos");
         registrarResultado(txtResultadoGrafo, rechazaCantidadNodos(11), L"Se rechazo un grafo de once nodos");
 
@@ -355,7 +369,10 @@ namespace MathOsSky
     {
         try
         {
-            txtResultadoRutas->Clear();
+            if (!ejecutandoTodas)
+            {
+                txtResultadoRutas->Clear();
+            }
             dgvRutas->Rows->Clear();
             int cantidadNodos = Decimal::ToInt32(nudNodosRutas->Value);
             int origen = Decimal::ToInt32(nudOrigenRutas->Value);
@@ -416,7 +433,10 @@ namespace MathOsSky
     {
         try
         {
-            txtResultadoTSP->Clear();
+            if (!ejecutandoTodas)
+            {
+                txtResultadoTSP->Clear();
+            }
             dgvTSP->Rows->Clear();
             int escenario = cmbEscenarioTSP->SelectedIndex;
             int origen = Decimal::ToInt32(nudOrigenTSP->Value);
@@ -534,7 +554,10 @@ namespace MathOsSky
     {
         try
         {
-            txtResultadoDiagnostico->Clear();
+            if (!ejecutandoTodas)
+            {
+                txtResultadoDiagnostico->Clear();
+            }
             dgvFaltantes->Rows->Clear();
             int escenario = cmbEscenarioDiagnostico->SelectedIndex;
             int origen = Decimal::ToInt32(nudOrigenDiagnostico->Value);
@@ -632,7 +655,10 @@ namespace MathOsSky
     {
         try
         {
-            txtResultadoTraza->Clear();
+            if (!ejecutandoTodas)
+            {
+                txtResultadoTraza->Clear();
+            }
             dgvTraza->Rows->Clear();
             int escenario = cmbEscenarioTraza->SelectedIndex;
             Metrica metrica = seleccionarMetrica(cmbMetricaTraza->SelectedIndex);
@@ -743,29 +769,52 @@ namespace MathOsSky
     System::Void TestForm::btnEjecutarTodas_Click(System::Object^, System::EventArgs^)
     {
         limpiarResultados();
+        ejecutandoTodas = true;
+
+        cmbMetricaGrafo->SelectedIndex = 0;
+        cmbEscenarioTSP->SelectedIndex = 0;
+        cmbMetricaTSP->SelectedIndex = 0;
+        cmbEscenarioDiagnostico->SelectedIndex = 0;
+        cmbEscenarioTraza->SelectedIndex = 0;
+        cmbMetricaTraza->SelectedIndex = 0;
+
+        txtResultadoGrafo->AppendText(L"[Grafo determinista]" + Environment::NewLine);
         btnProbarGrafo_Click(nullptr, nullptr);
+        txtResultadoGrafo->AppendText(Environment::NewLine + L"[Validaciones del grafo]" + Environment::NewLine);
         btnValidacionesGrafo_Click(nullptr, nullptr);
 
-        nudNodosRutas->Value = System::Decimal(5);
-        nudOrigenRutas->Value = System::Decimal(0);
-        btnGenerarRutas_Click(nullptr, nullptr);
+        for (int cantidadNodos = Grafo::MINIMO_NODOS; cantidadNodos <= Grafo::MAXIMO_NODOS; ++cantidadNodos)
+        {
+            nudNodosRutas->Value = System::Decimal(cantidadNodos);
+            nudOrigenRutas->Value = System::Decimal(0);
+            txtResultadoRutas->AppendText(String::Format(L"[Rutas canonicas: {0} nodos]", cantidadNodos) + Environment::NewLine);
+            btnGenerarRutas_Click(nullptr, nullptr);
+            txtResultadoRutas->AppendText(Environment::NewLine);
+        }
 
         for (int escenario = 0; escenario < cmbEscenarioTSP->Items->Count; ++escenario)
         {
             cmbEscenarioTSP->SelectedIndex = escenario;
+            txtResultadoTSP->AppendText(L"[" + cmbEscenarioTSP->Text + L"]" + Environment::NewLine);
             btnEjecutarTSP_Click(nullptr, nullptr);
+            txtResultadoTSP->AppendText(Environment::NewLine);
         }
         for (int escenario = 0; escenario < cmbEscenarioDiagnostico->Items->Count; ++escenario)
         {
             cmbEscenarioDiagnostico->SelectedIndex = escenario;
+            txtResultadoDiagnostico->AppendText(L"[" + cmbEscenarioDiagnostico->Text + L"]" + Environment::NewLine);
             btnEjecutarDiagnostico_Click(nullptr, nullptr);
+            txtResultadoDiagnostico->AppendText(Environment::NewLine);
         }
         for (int escenario = 0; escenario < cmbEscenarioTraza->Items->Count; ++escenario)
         {
             cmbEscenarioTraza->SelectedIndex = escenario;
+            txtResultadoTraza->AppendText(L"[" + cmbEscenarioTraza->Text + L"]" + Environment::NewLine);
             btnEjecutarTraza_Click(nullptr, nullptr);
+            txtResultadoTraza->AppendText(Environment::NewLine);
         }
 
+        ejecutandoTodas = false;
         lblDescripcion->Text = String::Format(
             L"Pruebas ejecutadas: {0} | Aprobadas: {1} | Fallidas: {2}",
             cantidadAprobadas + cantidadFallidas,
