@@ -6,6 +6,7 @@
 
 namespace MathOsSky
 {
+    // Representa una ruta candidata junto con su validez y valor total
     struct RutaEvaluada
     {
         std::vector<int> ruta;
@@ -13,6 +14,7 @@ namespace MathOsSky
         double valorTotal = 0.0;
     };
 
+    // Almacena las rutas evaluadas y el mejor resultado del solucionador TSP
     struct ResultadoTSP
     {
         std::vector<RutaEvaluada> rutas;

@@ -15,14 +15,14 @@ namespace MathOsSky
         conexiones.assign(cantidadNodos, std::vector<Conexion>(cantidadNodos));
     }
 
-    int Grafo::obtenerCantidadNodos() const
+    int Grafo::getCantidadNodos() const
     {
         return static_cast<int>(conexiones.size());
     }
 
-    void Grafo::validarNodos(int origen, int destino) const
+    void Grafo::validateNodos(int origen, int destino) const
     {
-        int cantidadNodos = obtenerCantidadNodos();
+        int cantidadNodos = getCantidadNodos();
 
         if (origen < 0 || destino < 0 ||
             origen >= cantidadNodos || destino >= cantidadNodos)
@@ -31,10 +31,9 @@ namespace MathOsSky
         }
     }
 
-    void Grafo::agregarConexion(int origen, int destino,
-        double distancia, double tiempo, double costo)
+    void Grafo::addConexion(int origen, int destino, double distancia, double tiempo, double costo)
     {
-        validarNodos(origen, destino);
+        validateNodos(origen, destino);
 
         if (origen == destino)
         {
@@ -54,26 +53,26 @@ namespace MathOsSky
         conexiones[destino][origen] = conexion;
     }
 
-    void Grafo::eliminarConexion(int origen, int destino)
+    void Grafo::removeConexion(int origen, int destino)
     {
-        validarNodos(origen, destino);
+        validateNodos(origen, destino);
         conexiones[origen][destino] = Conexion{};
         conexiones[destino][origen] = Conexion{};
     }
 
-    bool Grafo::existeConexion(int origen, int destino) const
+    bool Grafo::hasConexion(int origen, int destino) const
     {
-        validarNodos(origen, destino);
+        validateNodos(origen, destino);
         return conexiones[origen][destino].existe;
     }
 
-    Conexion Grafo::obtenerConexion(int origen, int destino) const
+    Conexion Grafo::getConexion(int origen, int destino) const
     {
-        validarNodos(origen, destino);
+        validateNodos(origen, destino);
         return conexiones[origen][destino];
     }
 
-    double Grafo::seleccionarPeso(const Conexion& conexion, Metrica metrica)
+    double Grafo::selectPeso(const Conexion& conexion, Metrica metrica)
     {
         switch (metrica)
         {
@@ -88,9 +87,9 @@ namespace MathOsSky
         }
     }
 
-    double Grafo::obtenerPeso(int origen, int destino, Metrica metrica) const
+    double Grafo::getPeso(int origen, int destino, Metrica metrica) const
     {
-        validarNodos(origen, destino);
+        validateNodos(origen, destino);
         const Conexion& conexion = conexiones[origen][destino];
 
         if (!conexion.existe)
@@ -99,12 +98,12 @@ namespace MathOsSky
                 "No se puede consultar el peso de una conexion inexistente.");
         }
 
-        return seleccionarPeso(conexion, metrica);
+        return selectPeso(conexion, metrica);
     }
 
-    Grafo::MatrizAdyacencia Grafo::obtenerMatrizAdyacencia() const
+    Grafo::MatrizAdyacencia Grafo::getMatrizAdyacencia() const
     {
-        int cantidadNodos = obtenerCantidadNodos();
+        int cantidadNodos = getCantidadNodos();
         MatrizAdyacencia matriz(cantidadNodos, std::vector<int>(cantidadNodos, 0));
 
         for (int origen = 0; origen < cantidadNodos; ++origen)
@@ -118,9 +117,9 @@ namespace MathOsSky
         return matriz;
     }
 
-    Grafo::MatrizPesos Grafo::obtenerMatrizPesos(Metrica metrica) const
+    Grafo::MatrizPesos Grafo::getMatrizPesos(Metrica metrica) const
     {
-        int cantidadNodos = obtenerCantidadNodos();
+        int cantidadNodos = getCantidadNodos();
         MatrizPesos matriz(cantidadNodos, std::vector<double>(cantidadNodos, 0.0));
 
         for (int origen = 0; origen < cantidadNodos; ++origen)
@@ -128,7 +127,7 @@ namespace MathOsSky
             for (int destino = 0; destino < cantidadNodos; ++destino)
             {
                 matriz[origen][destino] =
-                    seleccionarPeso(conexiones[origen][destino], metrica);
+                    selectPeso(conexiones[origen][destino], metrica);
             }
         }
 

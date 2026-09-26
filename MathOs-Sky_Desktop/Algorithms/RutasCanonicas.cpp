@@ -38,12 +38,12 @@ namespace MathOsSky
         }
         ruta.push_back(origen);
 
-        // El origen fijo elimina las rotaciones equivalentes del mismo ciclo.
+        // Fija el origen para eliminar las rotaciones equivalentes del mismo ciclo
         std::vector<int>::iterator inicioInterior = ruta.begin() + 1;
         std::vector<int>::iterator finInterior = ruta.end() - 1;
         do
         {
-            // De cada ruta y su inversa se conserva una sola orientacion.
+            // Conserva una sola orientacion entre cada ruta y su inversa
             if (*inicioInterior < *(finInterior - 1))
             {
                 rutas.push_back(ruta);
