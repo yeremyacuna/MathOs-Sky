@@ -93,6 +93,9 @@
     <EmbeddedResource Include="..\tests\TestForm.resx">
       <Filter>Tests</Filter>
     </EmbeddedResource>
+    <EmbeddedResource Include="..\tests\TestForm.resx">
+      <Filter>Tests</Filter>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\upc_icon.png">
