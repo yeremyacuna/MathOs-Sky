@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Forms">
@@ -13,6 +13,9 @@
     <Filter Include="Services">
       <UniqueIdentifier>{90909b29-3071-4d2f-8529-234a2ae117cb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{d21ee5c7-1b13-47e0-9f82-45e4bd852d36}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Resources">
       <UniqueIdentifier>{45ce164a-df0a-44a3-882f-225ec483d67e}</UniqueIdentifier>
     </Filter>
@@ -21,6 +24,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\tests\TestForm.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
     <ClCompile Include="Algorithms\DiagnosticoHamiltoniano.cpp">
       <Filter>Algorithms</Filter>
     </ClCompile>
@@ -41,6 +47,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\tests\TestForm.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
     <ClInclude Include="Algorithms\DiagnosticoHamiltoniano.h">
       <Filter>Algorithms</Filter>
     </ClInclude>
@@ -70,6 +79,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="..\tests\TestForm.resx">
+      <Filter>Tests</Filter>
+    </EmbeddedResource>
     <None Include="..\.gitignore" />
     <None Include="..\README.md" />
   </ItemGroup>

@@ -22,23 +22,32 @@
 
 **MathOs-Sky** es una aplicación que planifica rutas académicas entre departamentos del Perú utilizando grafos no dirigidos y ponderados, ciclos hamiltonianos y el algoritmo de fuerza bruta. El sistema encuentra el recorrido óptimo que permite visitar cada destino una sola vez, regresar al punto de partida y minimizar la distancia, el tiempo o el costo total.
 
-La aplicación representa cada departamento como un nodo y cada conexión disponible como una arista ponderada. El usuario puede crear el grafo manualmente o generarlo de forma aleatoria, consultar su matriz de costos y observar paso a paso cómo se construyen, validan y comparan las rutas posibles.
+La aplicación representa cada destino como un nodo y cada conexión disponible como una arista ponderada. El núcleo matemático ya permite construir grafos desde código, generar ciclos canónicos, resolver el TSP, diagnosticar conexiones faltantes e inspeccionar una ruta paso a paso. La selección de departamentos, la creación manual o aleatoria y la integración con la interfaz final permanecen en desarrollo.
 
-### Funcionalidades principales
+### Estado actual
 
-- Creación de grafos no dirigidos y ponderados de 5 a 10 nodos
-- Generación manual o aleatoria del grafo
-- Selección de la métrica a optimizar:
+- Grafo no dirigido y ponderado de 5 a 10 nodos
+- Pesos positivos y finitos para tres métricas:
   - Distancia estimada en kilómetros
   - Tiempo estimado de viaje
   - Costo estimado en soles
-- Visualización del grafo y de su matriz de costos
-- Identificación de ciclos hamiltonianos mediante fuerza bruta
-- Evaluación detallada de cada recorrido posible
+- Matrices de adyacencia, distancia, tiempo y costo
+- Rutas canónicas con origen fijo y eliminación de ciclos inversos
+- Solucionador TSP por fuerza bruta
 - Detección de rutas válidas e inválidas
-- Identificación de aristas faltantes cuando no existe un ciclo hamiltoniano
-- Cálculo del costo total de cada ciclo encontrado
-- Resaltado visual del ciclo hamiltoniano óptimo
+- Selección determinista del ciclo mínimo según la métrica elegida
+- Diagnóstico de las conexiones mínimas faltantes
+- Evaluación detallada bajo demanda de una ruta
+- Formulario interno `TestForm` para pruebas visuales del núcleo
+
+### Funcionalidades pendientes
+
+- Catálogo definitivo de departamentos del Perú y prevención de selecciones repetidas
+- Construcción manual y generación aleatoria desde la aplicación
+- Capa `Services` para comunicar la interfaz con el núcleo
+- Integración de los resultados con `MainForm`
+- Visualización final del grafo y reproducción interactiva
+- Pruebas automatizadas permanentes
 
 ---
 
@@ -93,31 +102,25 @@ La aplicación representa cada departamento como un nodo y cada conexión dispon
 ---
 
 ## Estructura del Proyecto
+
+```text
 MathOs-Sky/
-<br>
-├── MathOsSky/                  # Aplicación C++ con Windows Forms
-<br>
-│   ├── Forms/                  # Ventanas e interfaz gráfica
-<br>
-│   ├── Models/                 # Nodos, aristas, rutas y grafo
-<br>
-│   ├── Algorithms/             # Fuerza bruta y ciclos hamiltonianos
-<br>
-│   ├── Services/               # Validación, generación y cálculo
-<br>
-│   ├── Resources/              # Imágenes y recursos visuales
-<br>
-│   └── MathOsSky.cpp           # Punto de entrada
-<br>
-│
-<br>
-├── docs/                       # Diagramas y documentación
-<br>
-├── tests/                      # Casos de prueba
-<br>
-├── README.md                   # Información general del proyecto
-<br>
-└── .gitignore                  # Exclusiones de Visual Studio y C++
+├── MathOs-Sky.slnx
+├── MathOs-Sky_Desktop/
+│   ├── Forms/                  # Interfaz Windows Forms
+│   ├── Models/                 # Grafo y contratos de resultados
+│   ├── Algorithms/             # Rutas, TSP, diagnóstico y trazas
+│   ├── Services/               # Reservado para la integración futura
+│   ├── Resources/              # Recursos visuales
+│   └── main.cpp                # Punto de entrada
+├── tests/
+│   ├── TestForm.h              # Consola visual interna
+│   ├── TestForm.cpp
+│   └── TestForm.resx
+├── docs/
+├── MathOs-Sky_Web/             # Ampliación futura
+└── README.md
+```
 
 ---
 
@@ -140,6 +143,14 @@ cd MathOs-Sky
 # Abrir la solución en Visual Studio
 # Compilar en modo Debug o Release (x64)
 ```
+
+### Consola visual de pruebas
+
+`MainForm` continúa siendo el formulario predeterminado. Para abrir la consola interna de pruebas:
+
+La aplicacion abre `MainForm` de manera predeterminada. Para ejecutar temporalmente la consola visual, comenta la linea de `MainForm` en `main.cpp` y descomenta la linea de `TestForm`; al terminar la prueba, restaura ambas lineas.
+
+`TestForm` utiliza directamente las APIs de `Models` y `Algorithms`. No sustituye las futuras pruebas automatizadas ni forma parte de la interfaz final.
 
 ---
 

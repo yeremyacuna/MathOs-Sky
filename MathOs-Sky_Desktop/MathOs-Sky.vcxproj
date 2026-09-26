@@ -130,6 +130,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\tests\TestForm.cpp" />
     <ClCompile Include="Algorithms\DiagnosticoHamiltoniano.cpp" />
     <ClCompile Include="Algorithms\RutasCanonicas.cpp" />
     <ClCompile Include="Algorithms\SolucionadorTSP.cpp" />
@@ -138,6 +139,9 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\tests\TestForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Algorithms\DiagnosticoHamiltoniano.h" />
     <ClInclude Include="Algorithms\RutasCanonicas.h" />
     <ClInclude Include="Algorithms\SolucionadorTSP.h" />
@@ -151,12 +155,16 @@
     <ClInclude Include="Models\TiposTSP.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="..\tests\TestForm.resx">
+      <DependentUpon>TestForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>Forms\MainForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore" />
+    <None Include="..\AGENTS.md" />
     <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
