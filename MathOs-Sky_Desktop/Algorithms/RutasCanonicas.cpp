@@ -35,7 +35,7 @@ namespace MathOsSky
         ruta.reserve(static_cast<std::size_t>(cantidadNodos) + 1);
         ruta.push_back(origen); // Coloca el origen al inicio para fijarlo y eliminar rotaciones equivalentes
 
-        for (int nodo = 0; nodo < cantidadNodos; ++nodo) // aqui por ejemplo hace esto: {0, 1, 2, 3, 4} crea el nodo de conexion
+        for (int nodo = 0; nodo < cantidadNodos; ++nodo) // Agrega los nodos distintos del origen a la ruta inicial
         {
             if (nodo != origen)
             {

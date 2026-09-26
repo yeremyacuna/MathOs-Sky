@@ -130,6 +130,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Algorithms\DiagnosticoHamiltoniano.cpp" />
     <ClCompile Include="Algorithms\RutasCanonicas.cpp" />
     <ClCompile Include="Algorithms\SolucionadorTSP.cpp" />
     <ClCompile Include="Forms\MainForm.cpp" />
@@ -137,6 +138,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algorithms\DiagnosticoHamiltoniano.h" />
     <ClInclude Include="Algorithms\RutasCanonicas.h" />
     <ClInclude Include="Algorithms\SolucionadorTSP.h" />
     <ClInclude Include="Forms\MainForm.h">
@@ -144,6 +146,7 @@
     </ClInclude>
     <ClInclude Include="Models\Grafo.h" />
     <ClInclude Include="Models\TiposGrafo.h" />
+    <ClInclude Include="Models\TiposDiagnostico.h" />
     <ClInclude Include="Models\TiposTSP.h" />
   </ItemGroup>
   <ItemGroup>

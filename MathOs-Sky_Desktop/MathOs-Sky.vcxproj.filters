@@ -21,6 +21,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Algorithms\DiagnosticoHamiltoniano.cpp">
+      <Filter>Algorithms</Filter>
+    </ClCompile>
     <ClCompile Include="Algorithms\RutasCanonicas.cpp">
       <Filter>Algorithms</Filter>
     </ClCompile>
@@ -38,6 +41,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algorithms\DiagnosticoHamiltoniano.h">
+      <Filter>Algorithms</Filter>
+    </ClInclude>
     <ClInclude Include="Algorithms\RutasCanonicas.h">
       <Filter>Algorithms</Filter>
     </ClInclude>
@@ -51,6 +57,9 @@
       <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="Models\TiposGrafo.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\TiposDiagnostico.h">
       <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="Models\TiposTSP.h">

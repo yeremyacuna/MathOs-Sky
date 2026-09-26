@@ -12,11 +12,10 @@ namespace MathOsSky
     class SolucionadorTSP
     {
     private:
-        // Evalua una ruta canonica con la metrica seleccionada
-        static RutaEvaluada evaluateRuta(const Grafo& grafo, const std::vector<int>& ruta, Metrica metrica);
+        static RutaEvaluada evaluateRuta(const Grafo& grafo, const std::vector<int>& ruta, Metrica metrica); // Evalua una ruta canonica con la metrica seleccionada
 
     public:
-        // Resuelve el TSP desde un origen fijo y devuelve todas las rutas evaluadas y la mejor solucion
-        static ResultadoTSP solve(const Grafo& grafo, int origen, Metrica metrica);
+        static ResultadoTSP solve(const Grafo& grafo, int origen, Metrica metrica); // Resuelve el TSP desde un origen fijo y devuelve todas las rutas evaluadas y la mejor solucion
+
     };
 }
