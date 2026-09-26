@@ -147,6 +147,7 @@
     <ClInclude Include="Models\Grafo.h" />
     <ClInclude Include="Models\TiposGrafo.h" />
     <ClInclude Include="Models\TiposDiagnostico.h" />
+    <ClInclude Include="Models\TiposPasosTSP.h" />
     <ClInclude Include="Models\TiposTSP.h" />
   </ItemGroup>
   <ItemGroup>

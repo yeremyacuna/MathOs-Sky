@@ -1,7 +1,5 @@
 #include "DiagnosticoHamiltoniano.h"
-
 #include "RutasCanonicas.h"
-
 #include <algorithm>
 #include <cstddef>
 

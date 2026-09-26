@@ -11,8 +11,7 @@ namespace MathOsSky
     class DiagnosticoHamiltoniano
     {
     private:
-        // Devuelve las conexiones faltantes de una ruta sin duplicados y con extremos normalizados
-        static std::vector<ConexionFaltante> findConexionesFaltantes(const Grafo& grafo, const std::vector<int>& ruta);
+        static std::vector<ConexionFaltante> findConexionesFaltantes(const Grafo& grafo, const std::vector<int>& ruta);  // Devuelve las conexiones faltantes de una ruta sin duplicados y con extremos normalizados
 
     public:
         // Devuelve el diagnostico hamiltoniano desde un origen fijo

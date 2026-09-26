@@ -8,7 +8,7 @@ namespace MathOsSky
     class Grafo
     {
     private:
-        
+
         std::vector<std::vector<Conexion>> conexiones; // Almacena las conexiones del grafo mediante una matriz cuadrada
 
         void validateNodos(int origen, int destino) const; // Verifica que los nodos indicados pertenezcan al rango del grafo

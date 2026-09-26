@@ -62,6 +62,9 @@
     <ClInclude Include="Models\TiposDiagnostico.h">
       <Filter>Models</Filter>
     </ClInclude>
+    <ClInclude Include="Models\TiposPasosTSP.h">
+      <Filter>Models</Filter>
+    </ClInclude>
     <ClInclude Include="Models\TiposTSP.h">
       <Filter>Models</Filter>
     </ClInclude>

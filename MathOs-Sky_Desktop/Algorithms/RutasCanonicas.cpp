@@ -1,7 +1,5 @@
 #include "RutasCanonicas.h"
-
 #include "../Models/Grafo.h"
-
 #include <algorithm>
 #include <cstddef>
 #include <stdexcept>
