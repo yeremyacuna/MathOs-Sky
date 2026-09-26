@@ -4,6 +4,6 @@
 
 namespace MathOsSky
 {
-    // Genera las rutas canonicas de un grafo no dirigido desde un origen fijo
+    // Genera rutas cerradas unicas desde un origen fijo y elimina equivalencias por rotacion e inversion
     std::vector<std::vector<int>> generarRutasCanonicas(int cantidadNodos, int origen);
 }
